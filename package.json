@@ -1,23 +1,25 @@
 {
-  "name": "san-battle",
+  "name": "confession-battle",
   "version": "1.0.0",
-  "description": "Sistema de votación San Marcos con MongoDB",
+  "description": "Anonymous confession voting platform for university students",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "init-db": "node init-database.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [
+    "confessions",
+    "anonymous",
     "voting",
-    "mongodb",
-    "express",
-    "san-marcos"
+    "university"
   ],
-  "author": "",
+  "author": "jose-lorenzo-49",
   "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
-    "cloudinary": "^2.8.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
@@ -25,5 +27,9 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jose-lorenzo-49/confession-battle.git"
   }
 }

@@ -415,7 +415,7 @@ const CONFESIONES = [
     // ❤️ CONFESIONES UNIVERSALES (Balance)
     {
         id: 41,
-        text: "Llevo 2 años enamorado de alguien de mi salón pero cada vez que intento hablarle me paralizo completamente...",
+        text: "Llevo 1 año enamorado de alguien de mi salón pero cada vez que intento hablarle me paralizo completamente...",
         category: "amor",
         icon: "💔",
         votes: 1156,
@@ -492,6 +492,245 @@ const CONFESIONES = [
         icon: "🤢",
         votes: 1345,
         timestamp: Date.now() - 2073600000
+    },
+
+    // 😴 PARIONA - El Vago Legendario
+    {
+        id: 51,
+        text: "Pariona es el profe más vago de 2do ciclo. Llega tarde, se va temprano, y la mitad del tiempo no explica nada. Solo lee las diapositivas. ¿Cómo sigue dando clases?",
+        category: "rant",
+        icon: "😴",
+        votes: 2456,
+        timestamp: Date.now()
+    },
+    {
+        id: 52,
+        text: "En Química con Pariona aprendí más de YouTube que de sus clases. El tipo literalmente nos dijo 'lean el capítulo 5' y se fue. WTF.",
+        category: "rant",
+        icon: "🙄",
+        votes: 1923,
+        timestamp: Date.now()
+    },
+
+    // 📝 CARRERA = ACUÑA 2.0 (Jeroglíficos)
+    {
+        id: 53,
+        text: "Carrera Barrantes escribe en la pizarra como si fuera código egipcio. Después de 1 hora de clase, mi cuaderno parece arte abstracto. No entiendo NADA.",
+        category: "humor",
+        icon: "😵",
+        votes: 2389,
+        timestamp: Date.now()
+    },
+    {
+        id: 54,
+        text: "Carrera es Acuña 2.0. Mismo estilo de explicar (no explicar), misma letra ilegible, mismos exámenes imposibles. ¿Los clonaron o qué?",
+        category: "academico",
+        icon: "🤯",
+        votes: 2156,
+        timestamp: Date.now()
+    },
+    {
+        id: 55,
+        text: "Si Carrera y Acuña escribieran juntos en la pizarra, crearían un portal dimensional. Nadie entendería absolutamente nada del universo.",
+        category: "humor",
+        icon: "🌌",
+        votes: 2234,
+        timestamp: Date.now()
+    },
+
+    // 🎯 ACUÑA - El Legendario
+    {
+        id: 56,
+        text: "Tuve a Acuña en Cálculo I. Literalmente aprobé sin saber cómo. Sus clases son experiencias traumáticas. Lo peor es que él cree que explica súper bien.",
+        category: "humor",
+        icon: "💀",
+        votes: 2567,
+        timestamp: Date.now()
+    },
+    {
+        id: 57,
+        text: "Acuña escribe en jeroglíficos y explica en Klingon. Si entiendes algo en su clase, eres un genio certificado.",
+        category: "academico",
+        icon: "📝",
+        votes: 2234,
+        timestamp: Date.now()
+    },
+    {
+        id: 58,
+        text: "Sobreviví a Acuña en Cálculo I. Mi consejo: siéntate adelante, toma fotos de la pizarra, y descifra los jeroglíficos después con ayuda de YouTube.",
+        category: "secreto",
+        icon: "📸",
+        votes: 1967,
+        timestamp: Date.now()
+    },
+
+    // 👩‍🏫 YARINGAÑO - Perspectiva Diferente
+    {
+        id: 59,
+        text: "No entiendo por qué todos le tienen miedo a Yaringaño en Física. Es literalmente la más piola. Explica bien y sus exámenes son justos. La gente solo se queja porque no estudia.",
+        category: "polemico",
+        icon: "🔥",
+        votes: 1567,
+        timestamp: Date.now()
+    },
+    {
+        id: 60,
+        text: "Yaringaño > todos los demás profes de Física. Change my mind. Es la única que realmente se preocupa porque entendamos.",
+        category: "academico",
+        icon: "👩‍🏫",
+        votes: 1834,
+        timestamp: Date.now()
+    },
+    {
+        id: 61,
+        text: "Yaringaño tiene fama de difícil pero en realidad es la más justa. La gente reproeba porque no estudia, no porque ella sea mala.",
+        category: "secreto",
+        icon: "✅",
+        votes: 1834,
+        timestamp: Date.now()
+    },
+
+    // 👔 TINOCO - El Decano
+    {
+        id: 62,
+        text: "Tinoco es DECANO y aún así da clases. Respeto infinito. Aunque honestamente no sé cómo le alcanza el tiempo para todo.",
+        category: "academico",
+        icon: "👔",
+        votes: 1678,
+        timestamp: Date.now()
+    },
+    {
+        id: 64,
+        text: "Si Wong reemplaza a Tinoco como decano, básicamente Arbaiza va a dirigir toda la facultad sin que nadie lo sepa oficialmente.",
+        category: "humor",
+        icon: "😂",
+        votes: 2089,
+        timestamp: Date.now()
+    },
+
+    // 🗳️ VILLENA - El Drama
+    {
+        id: 65,
+        text: "¿Villena fue votado del curso y su reemplazo supuestamente será Wong? O sea... ¿nadie? ¿Arbaiza va a asumir Investigación Formativa también?",
+        category: "polemico",
+        icon: "🤯",
+        votes: 2678,
+        trending: true,
+        timestamp: Date.now()
+    },
+    {
+        id: 66,
+        text: "Desde que votaron a Villena, Investigación Formativa es un caos. Nadie sabe quién realmente está a cargo. Cada semana cambian las reglas del juego.",
+        category: "rant",
+        icon: "😤",
+        votes: 2234,
+        timestamp: Date.now()
+    },
+    {
+        id: 67,
+        text: "Honestamente prefería a Villena. Era estricto pero al menos sabías qué esperar. Ahora es lotería cada clase.",
+        category: "academico",
+        icon: "🎲",
+        votes: 1923,
+        timestamp: Date.now()
+    },
+
+    // 🎯 BINGO & HUMOR INSIDER
+    {
+        id: 68,
+        text: "Bingo de 2do ciclo: ✅ Pariona llega tarde ✅ Núñez falta ✅ Carrera escribe ilegible ✅ Wong no aparece ✅ Arbaiza salva la clase",
+        category: "humor",
+        icon: "🎯",
+        votes: 2789,
+        trending: true,
+        timestamp: Date.now()
+    },
+    {
+        id: 69,
+        text: "Ranking de profes fantasma: 1. Wong (casi nunca lo vi) 2. Núñez (usb andante) 3. Pariona (llega pero no da clase)",
+        category: "humor",
+        icon: "👻",
+        votes: 2456,
+        timestamp: Date.now()
+    },
+    {
+        id: 70,
+        text: "El día que Wong aparezca físicamente en clase, voy a pensar que estoy alucinando. 'Oye bro, ¿tú también lo ves o solo yo?'",
+        category: "humor",
+        icon: "😂",
+        votes: 2345,
+        timestamp: Date.now()
+    },
+
+    // 💡 PROTIPS ADICIONALES
+    {
+        id: 71,
+        text: "PROTIP: Si tienes dudas en Realidad Nacional o Redacción, búscale a Arbaiza directamente. Wong no te va a responder porque no existe.",
+        category: "secreto",
+        icon: "💡",
+        votes: 2345,
+        timestamp: Date.now()
+    },
+    {
+        id: 72,
+        text: "El secreto para aprobar con Carrera: no intentes entender su letra. Graba las clases con tu celular y transcríbelas en casa con paciencia infinita.",
+        category: "secreto",
+        icon: "📱",
+        votes: 2189,
+        timestamp: Date.now()
+    },
+    {
+        id: 73,
+        text: "Si te toca Pariona o Núñez, básicamente tienes que aprender solo. Ellos solo están ahí para firmar las notas al final del ciclo.",
+        category: "secreto",
+        icon: "🤫",
+        votes: 2456,
+        timestamp: Date.now()
+    },
+
+    // 🔥 POLÉMICAS FINALES
+    {
+        id: 74,
+        text: "Arbaiza merece un aumento del 300%. Está haciendo el trabajo de Wong en 2 cursos y probablemente más. Queen behavior.",
+        category: "polemico",
+        icon: "👑",
+        votes: 2678,
+        trending: true,
+        timestamp: Date.now()
+    },
+    {
+        id: 75,
+        text: "Todos saben que Arbaiza hace el trabajo de 3 profesores pero nadie oficialmente lo reconoce. Es la MVP invisible de 2do ciclo.",
+        category: "polemico",
+        icon: "🏆",
+        votes: 2567,
+        timestamp: Date.now()
+    },
+    {
+        id: 76,
+        text: "Cambio de opinión impopular: Pariona y Núñez deberían ser reemplazados. Si no quieren enseñar, que dejen el puesto a alguien que sí quiera.",
+        category: "polemico",
+        icon: "🔥",
+        votes: 2567,
+        trending: true,
+        timestamp: Date.now()
+    },
+    {
+        id: 77,
+        text: "Arbaiza debería tener el crédito oficial de los cursos que realmente dicta. Es injusto que Wong se lleve el reconocimiento de su trabajo.",
+        category: "polemico",
+        icon: "⚖️",
+        votes: 2789,
+        trending: true,
+        timestamp: Date.now()
+    },
+    {
+        id: 78,
+        text: "Si Wong va a reemplazar a Tinoco, que al menos se aparezca en las clases primero. ¿Cómo vas a ser decano si eres un fantasma?",
+        category: "polemico",
+        icon: "👻",
+        votes: 2456,
+        timestamp: Date.now()
     }
 ];
 

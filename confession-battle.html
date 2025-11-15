@@ -393,6 +393,152 @@
             border: none;
         }
 
+        .share-btn {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 95;
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(231, 76, 60, 0.6);
+        }
+
+        .share-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .share-btn {
+                top: auto;
+                bottom: 160px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 0.8rem;
+            }
+        }
+
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 300;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .share-modal.active {
+            display: flex;
+        }
+
+        .share-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid rgba(243, 156, 18, 0.3);
+            text-align: center;
+        }
+
+        .share-content h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .share-option {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .share-option:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        .share-option-icon {
+            font-size: 2rem;
+        }
+
+        .share-option-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .copy-link-container {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .copy-link-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .copy-btn.copied {
+            background: #27ae60;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -613,6 +759,11 @@
         </div>
     </div>
 
+    <button class="share-btn" onclick="openShareModal()">
+        <span>📢</span>
+        COMPARTIR
+    </button>
+
     <div class="top-beauty">
         <h3>
             🔥 TOP CONFESIONES
@@ -709,6 +860,43 @@
                 <button type="submit" class="submit-btn">Enviar Confesión</button>
                 <button type="button" class="action-btn" style="margin-top: 10px;" onclick="closeSubmitModal()">Cancelar</button>
             </form>
+        </div>
+    </div>
+
+    <div id="shareModal" class="share-modal">
+        <div class="share-content">
+            <h2>🔥 Comparte Confession Battle</h2>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Ayuda a que más gente descubra las confesiones más salvajes de 2do ciclo</p>
+            
+            <div class="share-options">
+                <div class="share-option" onclick="shareWhatsApp()">
+                    <div class="share-option-icon">💬</div>
+                    <div class="share-option-label">WhatsApp</div>
+                </div>
+                <div class="share-option" onclick="shareFacebook()">
+                    <div class="share-option-icon">📘</div>
+                    <div class="share-option-label">Facebook</div>
+                </div>
+                <div class="share-option" onclick="shareTwitter()">
+                    <div class="share-option-icon">🐦</div>
+                    <div class="share-option-label">Twitter</div>
+                </div>
+                <div class="share-option" onclick="shareTelegram()">
+                    <div class="share-option-icon">✈️</div>
+                    <div class="share-option-label">Telegram</div>
+                </div>
+            </div>
+
+            <div class="copy-link-container">
+                <input type="text" class="copy-link-input" id="shareLink" readonly value="">
+                <button class="copy-btn" id="copyBtn" onclick="copyLink()">
+                    📋 Copiar Link
+                </button>
+            </div>
+
+            <button class="action-btn" style="margin-top: 15px;" onclick="closeShareModal()">
+                Cerrar
+            </button>
         </div>
     </div>
 
@@ -920,8 +1108,71 @@
             document.getElementById('streak').textContent = streak;
             document.getElementById('streakCount').textContent = streak;
 
+            // Configurar link para compartir
+            const currentUrl = window.location.href;
+            document.getElementById('shareLink').value = currentUrl;
+
             loadConfesiones();
         });
+
+        // Funciones para compartir
+        function openShareModal() {
+            document.getElementById('shareModal').classList.add('active');
+        }
+
+        function closeShareModal() {
+            document.getElementById('shareModal').classList.remove('active');
+        }
+
+        function getShareText() {
+            return `🤫 CONFESSION BATTLE - 2do Ciclo Industrial
+
+${confesiones.length} confesiones ANÓNIMAS y sin filtro 🔥
+
+Top confesión: "${confesiones.sort((a,b) => b.votes - a.votes)[0].text.substring(0, 60)}..."
+
+¿Te atreves a leer las verdades más salvajes? 👀`;
+        }
+
+        function shareWhatsApp() {
+            const text = getShareText();
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}%0A%0A${url}`, '_blank');
+        }
+
+        function shareFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareTwitter() {
+            const text = getShareText();
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`, '_blank');
+        }
+
+        function shareTelegram() {
+            const text = getShareText();
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://t.me/share/url?url=${url}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function copyLink() {
+            const linkInput = document.getElementById('shareLink');
+            linkInput.select();
+            linkInput.setSelectionRange(0, 99999);
+            
+            navigator.clipboard.writeText(linkInput.value).then(() => {
+                const copyBtn = document.getElementById('copyBtn');
+                copyBtn.textContent = '✅ ¡Copiado!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 Copiar Link';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
 
         // Resetear votos diarios a medianoche
         const now = new Date();
