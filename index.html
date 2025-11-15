@@ -890,21 +890,9 @@
         <div class="share-content">
             <button class="close-share" onclick="closeShareModal()">×</button>
             <h2>🔥 Comparte la App</h2>
-            <p>Invita a más personas a votar por las confesiones más polémicas</p>
+            <p>Copia el link y compártelo donde quieras</p>
             <div class="share-options">
-                <button class="share-option whatsapp" onclick="shareWhatsApp()">
-                    <span>📱</span> WhatsApp
-                </button>
-                <button class="share-option facebook" onclick="shareFacebook()">
-                    <span>👍</span> Facebook
-                </button>
-                <button class="share-option twitter" onclick="shareTwitter()">
-                    <span>🐦</span> Twitter
-                </button>
-                <button class="share-option telegram" onclick="shareTelegram()">
-                    <span>✈️</span> Telegram
-                </button>
-                <button class="share-option copy" onclick="copyLink()">
+                <button class="share-option copy" onclick="copyLink()" style="grid-column: 1 / -1;">
                     <span>🔗</span> Copiar Link
                 </button>
             </div>
@@ -924,7 +912,7 @@
             // En producción, esto vendría de una API
             confesiones = [...CONFESIONES].map(c => ({
                 ...c,
-                votes: c.votes || Math.floor(Math.random() * 500 + 100)
+                votes: c.votes || Math.floor(Math.random() * 50 + 10)
             }));
             
             document.getElementById('confessionCount').textContent = confesiones.length;
@@ -1087,38 +1075,6 @@
 
         function closeShareModal() {
             document.getElementById('shareModal').classList.remove('active');
-        }
-
-        function getShareText() {
-            const topConfession = confesiones.sort((a, b) => b.votes - a.votes)[0];
-            return `🤫 CONFESSION BATTLE - 2do Ciclo Industrial\n\n${confesiones.length} confesiones ANÓNIMAS y sin filtro 🔥\n\nTop confesión: "${topConfession.text.substring(0, 60)}..."\n\n`;
-        }
-
-        function shareWhatsApp() {
-            const text = getShareText();
-            const url = encodeURIComponent(window.location.href);
-            window.open(`https://wa.me/?text=${encodeURIComponent(text)}${url}`, '_blank');
-            closeShareModal();
-        }
-
-        function shareFacebook() {
-            const url = encodeURIComponent(window.location.href);
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-            closeShareModal();
-        }
-
-        function shareTwitter() {
-            const text = '🤫 Confession Battle - Confesiones anónimas de 2do ciclo Industrial 🔥 Vota por las más polémicas!';
-            const url = encodeURIComponent(window.location.href);
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`, '_blank');
-            closeShareModal();
-        }
-
-        function shareTelegram() {
-            const text = getShareText();
-            const url = encodeURIComponent(window.location.href);
-            window.open(`https://t.me/share/url?url=${url}&text=${encodeURIComponent(text)}`, '_blank');
-            closeShareModal();
         }
 
         function copyLink() {
